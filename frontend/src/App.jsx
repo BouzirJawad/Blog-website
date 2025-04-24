@@ -1,14 +1,11 @@
-import React from 'react'
-import { Profile } from './icons/Profile'
+import React from 'react';
+import Image from './assets/Image.jpeg';
+import Connect from './pages/Connect'
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <p className='text-yellow-800'>this is a button</p>
-      <button><Profile /></button>
-      <p className='text-sm'><Profile /></p>
+    <div className="h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${Image})` }}>
+        <Connect />
     </div>
-  )
+  );
 }
-
-export default App
