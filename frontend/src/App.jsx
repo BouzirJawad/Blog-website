@@ -1,8 +1,13 @@
 import React from 'react'
+import { Profile } from './icons/Profile'
 
 function App() {
   return (
-    <div className='text-2xl text-red-600 underline'>HELLO MF</div>
+    <div>
+      <p className='text-yellow-800'>this is a button</p>
+      <button><Profile /></button>
+      <p className='text-sm'><Profile /></p>
+    </div>
   )
 }
 
