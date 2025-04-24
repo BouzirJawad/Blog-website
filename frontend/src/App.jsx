@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Image from './assets/Image.jpeg';
+import Login from './components/Login';
+import Register from './components/Register';
 
-function App() {
+export default function App() {
   return (
-    <div className='text-2xl text-red-600 underline'>HELLO MF</div>
-  )
+    <div
+      className="h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat"style={{ backgroundImage: `url(${Image})` }}>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </div>
+  );
 }
-
-export default App
