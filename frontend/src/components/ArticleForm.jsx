@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import { useFormik } from 'formik'
-import { Article } from '../utils/Article'
+import { Article } from '../schemas/Article'
 import axios from 'axios'
 import toast, {Toaster} from 'react-hot-toast'
 
