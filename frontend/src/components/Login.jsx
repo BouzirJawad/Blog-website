@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BiUser } from "react-icons/bi";
 import { AiOutlineLock } from "react-icons/ai";
-import { loginSchema } from '../schemas/validation'; 
+import { loginSchema } from '../schemas/ConnectValidation'; 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 

@@ -4,7 +4,7 @@ import { BiUser } from "react-icons/bi";
 import { AiOutlineLock } from "react-icons/ai";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { registerSchema } from '../schemas/validation';  
+import { registerSchema } from '../schemas/ConnectValidation';  
 
 function Register() {
   const {
