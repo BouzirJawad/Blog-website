@@ -5,7 +5,7 @@ import Register from '../components/Register';
 function Connect() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>
   );
