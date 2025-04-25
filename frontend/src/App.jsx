@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from './assets/Image.jpeg';
 import Connect from './pages/Connect'
 import Header from './components/Header';
 import ArticleForm from './components/ArticleForm';
@@ -7,9 +6,12 @@ import ArticleForm from './components/ArticleForm';
 
 export default function App() {
   return (
-    <div>
-      <Header></Header>
-      <ArticleForm />
+    <div className="h-screen w-screen bg-gradient-to-br from-slate-800 to-slate-900 flex justify-center items-center">
+    <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-10 shadow-xl">
+      <Connect />
     </div>
+  </div>
+  
+  
   );
 }
