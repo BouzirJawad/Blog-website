@@ -4,7 +4,7 @@ import { Article } from "../schemas/Article";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
-function ArticleForm() {
+function ArticleForm(props) {
   const [preview, setPreview] = useState(null);
 
   const formik = useFormik({
@@ -19,8 +19,11 @@ function ArticleForm() {
       try {
         await axios.post("http://localhost:7460/articles", values);
         toast.success("Article Created successfully", { duration: 3000 });
-        resetForm();
-        setPreview(null);
+        setTimeout(() => {
+            props.onClose()
+            resetForm();
+            setPreview(null);
+        }, 3000);
       } catch (error) {
         console.error("Error creating article:", error);
         toast.error("Error creating article", { duration: 2000 });
@@ -123,9 +126,12 @@ function ArticleForm() {
           </div>
         </div>
 
-        <div className="mx-auto text-center mt-5">
-          <button type="submit" className="primary-btn ">
-            Create Article
+        <div className="flex justify-around gap-5 mt-5">
+            <button type="button" onClick={props.onClose} className="bg-gray-500 text-white dark:text-black w-[50%]">
+                Cancel
+            </button>
+          <button type="submit" disabled={formik.isSubmitting} className="primary-btn w-[50%]">
+            Create
           </button>
         </div>
       </form>
