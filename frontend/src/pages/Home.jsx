@@ -7,7 +7,7 @@ import { Add } from "../icons/Add";
 
 const Home = () => {
   const [articles, setArticles] = useState([]);
-  const [isAdding, setIsAdding] = useState([]);
+  const [isAdding, setIsAdding] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("");
 

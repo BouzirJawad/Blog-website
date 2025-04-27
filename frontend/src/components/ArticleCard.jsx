@@ -1,5 +1,5 @@
-
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ArticleCard = (props) => {
   return (
@@ -21,14 +21,14 @@ const ArticleCard = (props) => {
 
         <p className="text-gray-700 flex-grow">
           {props.content.length > 100
-            ? props.content.substring(0, 100) + '...'
+            ? props.content.substring(0, 100) + "..."
             : props.content}
         </p>
 
         <div className="mt-4">
-          <button className="primary-btn">
-            Read More
-          </button>
+          <Link to={`/articles/${props.id}`}>
+            <button className="primary-btn">Read More</button>
+          </Link>
         </div>
       </div>
     </div>
