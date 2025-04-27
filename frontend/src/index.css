@@ -26,6 +26,9 @@
       @apply px-1.5 outline-none py-1 border rounded-sm placeholder:italic placeholder:font-light;
   }
 
+  option{
+    @apply bg-gray-400 dark:bg-gray-900
+  }
   .drop-menu{
       @apply transition inline-block px-3 ml-2;
   }
