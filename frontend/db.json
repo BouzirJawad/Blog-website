@@ -1,5 +1,26 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "1",
+      "username": "exampleUser",
+      "email": "example@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "480f",
+      "username": "CLK",
+      "email": "CL@gmail.com",
+      "password": "chaima2003",
+      "confirmPassword": "chaima2003"
+    },
+    {
+      "id": "26f2",
+      "username": "zineb",
+      "email": "zineb@gmail.com",
+      "password": "zineb1234",
+      "confirmPassword": "zineb1234"
+    }
+  ],
   "articles": [
     {
       "title": "another",
@@ -9,5 +30,13 @@
       "id": "a826"
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "id": "1",
+      "articleId": 1,
+      "author": "Commenter Name",
+      "content": "This is a comment example.",
+      "createdAt": "2025-04-24T12:00:00Z"
+    }
+  ]
 }

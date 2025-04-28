@@ -1,22 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BiUser } from "react-icons/bi";
 import { AiOutlineLock } from "react-icons/ai";
-import { loginSchema } from '../schemas/ConnectValidation'; 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { loginSchema } from '../schemas/ConnectValidation';
+import { loginUser } from '../server/userService';
+import { toast } from 'react-hot-toast';
 
 function Login() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm({
+  const navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(loginSchema)
   });
 
   const onSubmit = (data) => {
-    console.log("Login Data:", data);
+    loginUser(data.email, data.password).subscribe({
+      next: (users) => {
+        if (users.length > 0) {
+          toast.success('Login successful!');
+          navigate('/new-article'); 
+        } else {
+          toast.error('Invalid email or password');
+        }
+      },
+      error: () => {
+        toast.error('Server Error. Please try again.');
+      }
+    });
   };
 
   return (
@@ -38,7 +49,6 @@ function Login() {
           <BiUser className="absolute top-4 right-4" />
           {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
         </div>
-
         <div className="relative my-4">
           <input
             type="password"
@@ -53,7 +63,6 @@ function Login() {
           <AiOutlineLock className="absolute top-4 right-4" />
           {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
         </div>
-
         <div className="flex justify-between items-center">
           <div className="flex gap-2 items-center">
             <input type="checkbox" id="remember" />
@@ -61,13 +70,13 @@ function Login() {
           </div>
           <Link className="text-blue-500 text-sm" to="#">Forgot Password?</Link>
         </div>
-
         <button className="w-full mt-6 mb-4 rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300" type="submit">
           Login
         </button>
-
         <div className="text-center">
-          <span className="text-white text-sm">New here? <Link className="text-blue-500" to="/register">Create an Account</Link></span>
+          <span className="text-white text-sm">
+            New here? <Link className="text-blue-500" to="/register">Create an Account</Link>
+          </span>
         </div>
       </form>
     </div>
