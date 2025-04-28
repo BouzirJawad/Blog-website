@@ -7,9 +7,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
       <App />
       <Toaster position="top-right" reverseOrder={false} />
-    </BrowserRouter>
   </React.StrictMode>
 );
