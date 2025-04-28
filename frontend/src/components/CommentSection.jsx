@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getCommentsByArticle, addComment, deleteComment, updateComment } from '../services/commentService';
+import { getCommentsByArticle, addComment, deleteComment, updateComment } from '../server/commentService';
 import CommentForm from './CommentForm';
 import { toast } from 'react-hot-toast';
 import { useFetch } from '../hooks/useFetch';
@@ -58,7 +58,7 @@ const CommentSection = ({ articleId }) => {
   if (error) return <p className="text-red-500">Failed to load comments.</p>;
 
   return (
-    <div>
+    <div className="w-[90%] max-w-3xl mx-auto mainDiv p-5 rounded-2xl">
       <CommentForm articleId={articleId} onAdd={handleAdd} />
       <ul className="flex flex-col gap-2">
         {comments.map((c) => (

@@ -36,7 +36,7 @@ function ArtclDtlCrd(props) {
       } catch (error) {
         console.error("Error fetching article:", error);
         toast.error("Error fetching article", { duration: 4000 });
-        navigate("/");
+        navigate("/main/home");
       }
     };
 
@@ -52,7 +52,7 @@ function ArtclDtlCrd(props) {
       if (response.status === 200) {
         toast.success("Article deleted successfully !", { duration: 4000 });
         setTimeout(() => {
-          navigate("/");
+          navigate("/main/home");
         }, 6000);
       } else {
         toast.error("Failed to delete article", { duration: 4000 });
@@ -126,8 +126,8 @@ function ArtclDtlCrd(props) {
 
         <div className="flex justify-between items-center mt-7">
           <button
-            onClick={() => navigate("/")}
-            className=" bg-blue-500 h-fit hover:bg-blue-600 text-white rounded"
+            onClick={() => navigate("/main/home")}
+            className="primary-btn h-fit rounded"
           >
             Go Back
           </button>
@@ -258,7 +258,7 @@ function ArtclDtlCrd(props) {
                   disabled={updateFormik.isSubmitting}
                   className="primary-btn w-[50%]"
                 >
-                  Create
+                  Update
                 </button>
               </div>
             </div>
