@@ -26,7 +26,7 @@ const ArticleCard = (props) => {
         </p>
 
         <div className="mt-4">
-          <Link to={`/articles/${props.id}`}>
+          <Link to={`/main/articles/${props.id}`}>
             <button className="primary-btn">Read More</button>
           </Link>
         </div>

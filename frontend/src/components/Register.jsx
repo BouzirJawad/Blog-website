@@ -18,7 +18,7 @@ function Register() {
     registerUser(data).subscribe({
       next: () => {
         toast.success('Registration successful!');
-        navigate('/'); 
+        navigate('/home'); 
       },
       error: () => {
         toast.error('Registration failed, try again.');

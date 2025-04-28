@@ -4,10 +4,14 @@ import Register from '../components/Register';
 
 function Connect() {
   return (
-    <Routes>
-      <Route path="/Login" element={<Login />} />
+    <div className='w-[40%] mx-auto'>
+
+    <Routes >
+      <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>
+    
+    </div>
   );
 }
 

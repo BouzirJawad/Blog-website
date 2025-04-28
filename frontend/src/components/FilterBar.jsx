@@ -2,7 +2,7 @@ import React from 'react';
 
 function FilterBar({ searchTerm, setSearchTerm, category, setCategory }) {
   return (
-    <div className="mb-4 flex gap-4">
+    <div className=" flex items-center gap-4">
       <input
         type="text"
         value={searchTerm}

@@ -8,8 +8,8 @@ export default function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="*" element={<MainPage /> }/>
-          <Route path="/Connect" element={<Connect />} />
+          <Route path="/main/*" element={<MainPage /> }/>
+          <Route path="/*" element={<Connect />} />
         </Routes>
       </Router>
     </div>
